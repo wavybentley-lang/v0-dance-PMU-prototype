@@ -2,6 +2,8 @@
 
 import Image from "next/image"
 
+import { brand } from "@/lib/site-config"
+
 type AboutSectionProps = {
   isVisible: boolean
   setSectionRef: (id: string, element: HTMLElement | null) => void
@@ -21,17 +23,17 @@ export function AboutSection({ isVisible, setSectionRef }: AboutSectionProps) {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-sm border border-border bg-secondary">
-              <Image src="/centro danza/chisiamo.jpg" alt="Centro Danza chi siamo" fill quality={68} sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+              <Image src="/centro danza/chisiamo.jpg" alt="Permanent makeup artist at work" fill quality={68} sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
             </div>
           </div>
           <div className="mx-auto flex max-w-xl flex-col justify-center self-center lg:mx-0 lg:py-6">
-            <p className="mb-3 text-xs font-semibold tracking-[0.28em] text-primary uppercase">CHI SIAMO</p>
-            <h2 className="mb-5 font-serif text-4xl font-bold text-foreground sm:text-5xl">Un luogo dove la danza diventa crescita, espressione e passione.</h2>
-            <p className="mb-5 text-lg leading-relaxed text-pretty text-foreground">Centro Danza nasce con l&apos;obiettivo di offrire un ambiente accogliente e professionale in cui bambini, ragazzi e adulti possano scoprire e coltivare il proprio talento attraverso la danza.</p>
+            <p className="mb-3 text-xs font-semibold tracking-[0.28em] text-primary uppercase">About</p>
+            <h2 className="mb-5 font-serif text-4xl font-bold text-foreground sm:text-5xl">Meet your artist.</h2>
+            <p className="mb-5 text-lg leading-relaxed text-pretty text-foreground">{brand.artistNames} at [Studio Name] brings [Years of Experience] of experience and is fully licensed and certified ([Certifications/License]).</p>
             <div className="space-y-4 text-lg leading-relaxed text-pretty text-foreground">
-              <p>Guidata da Marco Protano e Martina Libro, la scuola accompagna ogni allievo in un percorso fatto di tecnica, disciplina, creativit&agrave; e crescita personale.</p>
-              <p>Crediamo che la danza sia molto pi&ugrave; di un&apos;attivit&agrave; fisica: &egrave; espressione, condivisione e fiducia in s&eacute; stessi. Per questo valorizziamo ogni allievo rispettandone tempi, obiettivi e potenzialit&agrave;.</p>
-              <p>Attraverso lezioni, spettacoli ed eventi, Centro Danza crea un ambiente stimolante e familiare dove ogni persona pu&ograve; sentirsi parte di una vera comunit&agrave;.</p>
+              <p><span className="font-semibold text-primary">Specialties:</span> Brows, Lip Blush, Eyeliner, and Corrections.</p>
+              <p>Natural, soft, and customized to you &mdash; every shape and shade is mapped to your features so the result enhances the face you already love.</p>
+              <p>Sterile tools, single-use supplies, and a clean studio. Your comfort and safety guide every step of the process.</p>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 "use client"
 
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Star } from "lucide-react"
 import Image from "next/image"
 
-import { stats } from "@/lib/site-config"
+import { brand, stats } from "@/lib/site-config"
 import { useCounter } from "@/hooks/use-counter"
 
 function StatCounter({ stat }: { stat: typeof stats[number] }) {
@@ -42,7 +42,7 @@ export function HeroSection() {
       <div className="absolute inset-y-0 right-0 z-0 w-full overflow-hidden sm:[background-position:center_15%] lg:w-[62%]">
         <Image
           src="/centro danza/hero.jpg"
-          alt="Sala danza Centro Danza"
+          alt="Permanent makeup studio"
           fill
           priority
           quality={64}
@@ -55,23 +55,29 @@ export function HeroSection() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-[34rem] text-left">
             <div className="animate-clip-reveal mb-6 inline-flex items-center rounded-full border border-[#F5F5F5]/20 bg-white/5 px-4 py-2 text-xs font-semibold tracking-[0.24em] text-[#F5F5F5]/85 uppercase" style={{ animationDelay: "0.05s" }}>
-              DI MARCO PROTANO E MARTINA LIBRO
+              {brand.artistNames}
             </div>
             <h1 className="mb-6 text-left font-serif text-4xl leading-[1.02] font-bold text-balance text-[#F5F5F5] italic sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem]">
-              <span className="animate-clip-reveal inline-block">Dove passione, tecnica ed espressione si incontrano.</span>
+              <span className="animate-clip-reveal inline-block">Wake up with effortless, natural beauty every day.</span>
             </h1>
+            <div className="animate-clip-reveal mb-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F5F5F5]" style={{ animationDelay: "0.4s" }}>
+              <span className="flex gap-0.5 text-[#D4AF37]" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (<Star key={i} size={15} fill="currentColor" />))}
+              </span>
+              <span className="tracking-wide">5.0 &mdash; 200+ Reviews</span>
+            </div>
             <p className="animate-clip-reveal mb-10 max-w-none text-lg leading-relaxed font-light text-pretty text-[#B8B8B8] sm:text-xl lg:max-w-xl lg:text-2xl" style={{ animationDelay: "0.55s" }}>
-              Un percorso dedicato a bambini, ragazzi e adulti che desiderano crescere attraverso la danza in un ambiente professionale, accogliente e stimolante.
+              Permanent brows, lips, and eyeliner customized to your face, skin tone, and style &mdash; performed with care, precision, and a focus on beautiful healed results.
             </p>
             <p className="animate-clip-reveal mb-10 max-w-none text-sm leading-relaxed font-medium tracking-[0.08em] text-[#F5F5F5] uppercase sm:text-base lg:max-w-xl" style={{ animationDelay: "0.68s" }}>
-              LEZIONI DI PROVA DISPONIBILI SU PRENOTAZIONE.
+              Book your consultation today.
             </p>
             <div className="animate-clip-reveal flex flex-col justify-start gap-4 sm:flex-row" style={{ animationDelay: "0.7s" }}>
               <a href="#corsi" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F5F5F5]/60 bg-transparent px-8 py-4 text-lg font-semibold text-[#F5F5F5] shadow-sm transition-colors hover:bg-[#FFFFFF]/10">
-                Scopri i Corsi <ChevronRight size={20} />
+                View Services <ChevronRight size={20} />
               </a>
-              <a href="#contatti" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F5F5F5]/60 bg-card/70 px-8 py-4 text-lg font-semibold text-[#F5F5F5] shadow-sm transition-colors hover:bg-[#FFFFFF]/10">
-                Prenota una Prova <ChevronRight size={20} />
+              <a href={brand.bookingUrl} className="inline-flex items-center justify-center gap-2 rounded-full border border-[#F5F5F5]/60 bg-card/70 px-8 py-4 text-lg font-semibold text-[#F5F5F5] shadow-sm transition-colors hover:bg-[#FFFFFF]/10">
+                Book Consultation <ChevronRight size={20} />
               </a>
             </div>
           </div>

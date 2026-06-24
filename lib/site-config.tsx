@@ -1,13 +1,11 @@
 import {
-  Calendar,
-  CalendarRange,
-  Crown,
-  Flame,
-  Tag,
-  Ticket,
-  Users,
-  Wind,
-  Zap,
+  CalendarCheck,
+  Eye,
+  Gift,
+  Palette,
+  RefreshCcw,
+  Sparkles,
+  Wand2,
   type LucideIcon,
 } from "lucide-react"
 
@@ -29,12 +27,9 @@ export type CourseCategory = {
   courses: Course[]
 }
 
-export type ScheduleDay = {
-  day: string
-  classes: {
-    time: string
-    name: string
-  }[]
+export type ProcessStep = {
+  title: string
+  description: string
 }
 
 export type TeamMember = {
@@ -44,76 +39,87 @@ export type TeamMember = {
   bio: string
 }
 
+/**
+ * PITCH-DEMO TEMPLATE CONFIG
+ * Every business-specific value lives here so the site can be re-skinned per prospect.
+ * Bracketed values like [Business Name] / [Price] are intentional fill-in placeholders.
+ * bookingUrl is a placeholder anchor ("#") — do NOT wire it to a real scheduler in this pass.
+ */
 export const brand = {
-  name: "Centro Danza",
-  shortName: "Centro Danza",
-  tagline: "di Marco Protano e Martina Libro",
+  name: "[Business Name]",
+  shortName: "[Business Name]",
+  artistNames: "[Artist Name(s)]",
+  tagline: "[Artist Name(s)]",
   logo: "",
-  phone: "+39 329 862 4075",
-  phoneHref: "tel:+393298624075",
-  whatsappHref: "https://wa.me/393298624075",
-  email: "Email non disponibile",
+  bookingUrl: "#",
+  phone: "[Phone Number]",
+  phoneHref: "#",
+  whatsappHref: "#",
+  email: "[Email Address]",
   emailHref: "#",
-  instagramHref: "",
-  facebookHref: "https://www.facebook.com/centrodanzaviamartucci?locale=it_IT",
-  mapsHref: "https://maps.google.com/?q=Via+Giuseppe+Martucci+35B+80121+Napoli",
-  mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.1834702215347!2d14.2305507!3d40.8352313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b09028154f731%3A0xd31c265e10814181!2sCentro%20Danza%20di%20Marco%20Protano%20e%20Martina%20Libro!5e1!3m2!1sen!2sit!4v1782132170174!5m2!1sen!2sit",
-  primaryLocation: "Via Giuseppe Martucci 35/B",
-  secondaryLocation: "80121 Napoli",
-  cityLine: "Italy",
-  hours: "",
-  copyright: " 2026 Centro Danza",
+  instagram: "[Instagram Handle]",
+  instagramHref: "#",
+  facebookHref: "#",
+  mapsHref: "#",
+  // Placeholder map embed — searches a generic city/state query, not a real address (per global constraint #3)
+  mapEmbedQuery: "[City, State]",
+  mapsEmbedUrl: "https://maps.google.com/maps?q=United%20States&z=4&output=embed",
+  primaryLocation: "[Street Address]",
+  secondaryLocation: "[City], [State] [ZIP]",
+  cityLine: "",
+  hours: "By appointment only",
+  copyright: "\u00A9 2026 [Business Name]",
 }
 
 export const navLinks: NavLink[] = [
-  { href: "#chi-siamo", label: "Chi Siamo" },
-  { href: "#corsi", label: "Corsi" },
-  { href: "#orari", label: "Orari" },
-  { href: "#prezzi", label: "Prezzi" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#contatti", label: "Contatti" },
+  { href: "#chi-siamo", label: "About" },
+  { href: "#corsi", label: "Services" },
+  { href: "#orari", label: "How It Works" },
+  { href: "#prezzi", label: "Pricing" },
+  { href: "#gallery", label: "Results" },
+  { href: "#contatti", label: "Contact" },
 ]
 
 export const stats = [
-  { number: "7", label: "DISCIPLINE" },
-  { number: "DAI 3 ANNI", label: "BAMBINI, RAGAZZI E ADULTI" },
-  { number: "2", label: "SPETTACOLI ALLANNO" },
-  { number: "CORSI", label: "BASE E AVANZATI" },
+  { number: "5.0", label: "AVERAGE RATING" },
+  { number: "200+", label: "HAPPY CLIENTS" },
+  { number: "3", label: "SIGNATURE SERVICES" },
+  { number: "100%", label: "CUSTOMIZED LOOKS" },
 ]
 
 export const courseCategories: CourseCategory[] = [
   {
-    label: "Dance",
+    label: "Permanent Makeup",
     courses: [
       {
-        title: "Danza Classica",
-        age: "Tutti i livelli",
-        description: "Tecnica, postura e disciplina per costruire basi solide nella danza classica.",
+        title: "Powder Brows / Ombr\u00E9 Brows",
+        age: "Starting at [Price]",
+        description: "Soft, shaded brows for a polished, natural look that lasts.",
         image: "/imperial ballet/danzaclassica.jpg",
-        Icon: Zap,
+        Icon: Sparkles,
       },
       {
-        title: "Danza Classica per Bambini",
-        age: "Tutti i livelli",
-        description: "Un percorso pensato per avvicinare i più piccoli alla danza classica attraverso tecnica, musicalità e gioco.",
+        title: "Microblading / Nano Brows",
+        age: "Starting at [Price]",
+        description: "Hair-stroke effect for fuller-looking, naturally defined brows.",
         image: "/imperial ballet/danzaclassicaperbambini.jpg",
-        Icon: Flame,
+        Icon: Wand2,
       },
       {
-        title: "Pilates",
-        age: "Tutti i livelli",
-        description: "Allenamento controllato per postura, tonificazione, stabilità e consapevolezza corporea.",
+        title: "Lip Blush",
+        age: "Starting at [Price]",
+        description: "Enhances lip color, shape, and symmetry with a soft, natural tint.",
         image: "/imperial ballet/pilates.jpg",
-        Icon: Wind,
+        Icon: Palette,
       },
     ],
   },
 ]
 
 export const featuredGalleryPhotos: { src: string; alt: string }[] = [
-  { src: "/centro danza/nostrimomenti.jpg", alt: "Centro Danza momento in sala" },
-  { src: "/centro danza/nostrimomenti1.jpg", alt: "Centro Danza gruppo danza" },
-  { src: "/centro danza/nostrimomenti3.jpg", alt: "Centro Danza lezione di danza" },
+  { src: "/centro danza/nostrimomenti.jpg", alt: "Healed permanent makeup result" },
+  { src: "/centro danza/nostrimomenti1.jpg", alt: "Natural healed brow result" },
+  { src: "/centro danza/nostrimomenti3.jpg", alt: "Healed lip blush result" },
 ]
 
 export const allGalleryPhotos = [
@@ -126,146 +132,41 @@ export const allGalleryPhotos = [
   "/IMG_8377.JPG.webp", "/IMG_8378.JPG.webp", "/IMG_8379.JPG.webp", "/IMG_8380.JPG.webp",
   "/IMG_8382.JPG.webp", "/IMG_8383.JPG.webp", "/IMG_8385.JPG.webp", "/IMG_8387.JPG.webp",
   "/IMG_8390.JPG.webp", "/IMG_8396.JPG.webp", "/IMG_8402.JPG.webp", "/IMG_8413.webp",
-  "/additional/saggio-ateneo-agropoli-1.webp", "/additional/saggio-ateneo-agropoli-2.webp",
-  "/additional/performance-ateneo-agropoli.webp", "/additional/spettacolo-fine-anno-ateneo-1.webp",
-  "/additional/spettacolo-fine-anno-ateneo-3.webp", "/additional/spettacolo-fine-anno-ateneo.webp",
-  "/additional/danza-femminile-sedia-agropoli.webp", "/additional/female-perform-sitting-chair.webp",
-  "/additional/female-solo.webp", "/additional/females-group-perform.webp",
-  "/additional/females-perform-stage.webp", "/additional/females-performs3.webp",
-  "/additional/group-performance-4.webp", "/additional/group-performance-all-black.webp",
-  "/additional/groupd-perform-1.webp", "/additional/kid-perform-solo.webp",
-  "/additional/kid-solo-performance.webp", "/additional/kids-group-performance.webp",
-  "/additional/kids-performance.webp", "/additional/kids-performance1.webp",
-  "/additional/m-f-performa1.webp", "/additional/male-dancer.webp",
-  "/additional/male-fdemale-performance4.webp", "/additional/male-female-ballet-1.webp",
-  "/additional/coppia-balletto-ateneo-agropoli.webp",
-  "/additional/coppia-balletto-ateneo-agropoli-3.webp",
-  "/additional/duo-danza-ateneo-agropoli.webp", "/additional/gruppo-misto-performance-ateneo.webp",
-  "/additional/coppia-performance-ateneo-cilento.webp",
-  "/additional/coppia-danza-moderna-agropoli.webp",
-  "/additional/coppia-danza-moderna-agropoli-1.webp",
-  "/additional/coppia-danza-moderna-agropoli-2.webp",
-  "/additional/coppia-danza-moderna-agropoli-4.webp",
-  "/additional/coppia-performance-palcoscenico-1.webp",
-  "/additional/coppia-performance-palcoscenico-2.webp",
-  "/additional/coppia-performance-palcoscenico-3.webp",
-  "/additional/coppia-danza-ateneo.webp", "/additional/gruppo-misto-danza-ateneo-3.webp",
-  "/additional/danzatore-performance-agropoli-2.webp",
-  "/additional/danzatore-solo-ateneo-agropoli.webp",
-  "/additional/danzatore-solo-palcoscenico-agropoli.webp",
-  "/additional/danzatore-solo-palcoscenico-agropoli-1.webp",
-  "/additional/duo-misto-performance-ateneo.webp",
-  "/additional/uomo-danza-performance-agropoli.webp",
-  "/additional/performance-danza-ateneo-agropoli.webp",
-  "/additional/due-ragazze-palcoscenico-ateneo.webp",
-  "/additional/donna-danza-performance-agropoli-3.webp",
-  "/additional/donna-danza-rosso-ateneo-agropoli.webp",
-  "/additional/donne-performance-ateneo-agropoli-2.webp",
 ]
 
-export const salaArmoniaSchedule: ScheduleDay[] = [
-  {
-    day: "LUNEDÌ",
-    classes: [
-      { time: "10:00-11:00", name: "Gioco Danza" },
-      { time: "11:00-12:00", name: "Danza Classica" },
-      { time: "14:00-15:00", name: "Danza Moderna" },
-      { time: "17:00-18:00", name: "Danza Contemporanea" },
-      { time: "19:00-20:00", name: "Pas de Deux" },
-      { time: "20:30-21:30", name: "Storia della Danza" },
-      { time: "21:30-22:30", name: "Pilates" },
-      { time: "22:30-23:30", name: "Gioco Danza" },
-    ],
-  },
-  {
-    day: "MARTEDÌ",
-    classes: [
-      { time: "12:00-13:00", name: "Gioco Danza" },
-      { time: "14:00-15:00", name: "Danza Classica" },
-      { time: "17:00-18:00", name: "Danza Moderna" },
-      { time: "18:00-19:00", name: "Danza Contemporanea" },
-      { time: "19:30-20:30", name: "Pas de Deux" },
-      { time: "20:30-21:30", name: "Storia della Danza" },
-      { time: "21:30-22:30", name: "Pilates" },
-      { time: "22:30-23:30", name: "Gioco Danza" },
-    ],
-  },
-  {
-    day: "MERCOLEDÌ",
-    classes: [
-      { time: "11:30-12:30", name: "Pilates" },
-      { time: "14:00-15:00", name: "Gioco Danza" },
-      { time: "16:00-17:00", name: "Danza Classica" },
-      { time: "18:00-19:00", name: "Danza Moderna" },
-      { time: "19:00-20:00", name: "Danza Contemporanea" },
-      { time: "20:30-21:30", name: "Pas de Deux" },
-      { time: "21:30-22:30", name: "Storia della Danza" },
-    ],
-  },
-  {
-    day: "GIOVEDÌ",
-    classes: [
-      { time: "10:00-11:00", name: "Pilates" },
-      { time: "11:00-12:00", name: "Gioco Danza" },
-      { time: "14:00-15:00", name: "Danza Classica" },
-      { time: "17:00-18:00", name: "Danza Moderna" },
-      { time: "18:30-19:30", name: "Danza Contemporanea" },
-      { time: "19:30-20:30", name: "Pas de Deux" },
-      { time: "20:30-21:30", name: "Storia della Danza" },
-      { time: "21:30-22:30", name: "Pilates" },
-      { time: "22:30-23:30", name: "Gioco Danza" },
-    ],
-  },
-  {
-    day: "VENERDÌ",
-    classes: [
-      { time: "14:00-15:00", name: "Danza Classica" },
-      { time: "18:00-19:00", name: "Danza Moderna" },
-      { time: "19:00-20:00", name: "Danza Contemporanea" },
-      { time: "20:00-21:00", name: "Pas de Deux" },
-      { time: "21:00-22:00", name: "Storia della Danza" },
-      { time: "22:00-23:00", name: "Pilates" },
-    ],
-  },
-  {
-    day: "SABATO",
-    classes: [
-      { time: "11:00-12:00", name: "Gioco Danza" },
-      { time: "15:30-16:30", name: "Danza Classica" },
-      { time: "17:00-18:00", name: "Danza Contemporanea" },
-    ],
-  },
-  {
-    day: "DOMENICA",
-    classes: [{ time: "10:00-12:30", name: "Pas de Deux" }],
-  },
+export const howItWorksSteps: ProcessStep[] = [
+  { title: "Consultation", description: "We talk through your goals, review your features, and answer every question before anything begins." },
+  { title: "Custom Shape & Color Mapping", description: "Your artist maps a shape and selects pigment tones tailored to your face and skin tone." },
+  { title: "Procedure", description: "The treatment is performed with care, precision, and a focus on comfort throughout." },
+  { title: "Healing & Aftercare", description: "You receive clear aftercare guidance to protect your results as they settle and heal." },
+  { title: "Touch-Up Appointment", description: "A follow-up visit perfects color and shape for long-lasting, beautiful healed results." },
 ]
 
-export const salaRitmoSchedule = salaArmoniaSchedule
-
-export const scheduleBookingServices = [
-  "Gioco Danza",
-  "Danza Classica",
-  "Danza Moderna",
-  "Danza Contemporanea",
-  "Pas de Deux",
-  "Storia della Danza",
-  "Pilates",
-]
+// Placeholder copy — final legal/contraindication language should be reviewed by the client before launch.
+export const contraindicationsNote =
+  "Permanent makeup may not be suitable for everyone. Pregnancy, certain medications, and some skin conditions may require a modified plan \u2014 we'll review this together during your consultation."
 
 export const scheduleContactInfo = {
-  address: "Via Giuseppe Martucci 35/B, 80121 Napoli, Italy",
-  phone: "+39 329 862 4075",
+  address: "[Street Address], [City], [State] [ZIP]",
+  phone: "[Phone Number]",
 }
 
-export const pricingCards = [
-  { Icon: Ticket, title: "Lezione Singola", description: "Ideale per provare un corso prima di iscriverti. Nessun impegno, massima flessibilità." },
-  { Icon: Calendar, title: "Abbonamento Mensile", description: "La soluzione più flessibile per chi vuole ballare con regolarità ogni mese." },
-  { Icon: CalendarRange, title: "Abbonamento Semestrale", description: "Sei mesi di lezioni con un risparmio rispetto all'abbonamento mensile." },
-  { Icon: Crown, title: "Abbonamento Annuale", description: "La scelta di chi vuole dare continuità al proprio percorso artistico. Massimo risparmio." },
+export type PricingCard = {
+  Icon: LucideIcon
+  title: string
+  price: string
+  description: string
+}
+
+export const pricingCards: PricingCard[] = [
+  { Icon: Sparkles, title: "Brows", price: "Starting at [Price]", description: "Powder, ombr\u00E9, microblading, and combo brow techniques tailored to your shape." },
+  { Icon: Palette, title: "Lip Blush", price: "Starting at [Price]", description: "Soft, natural lip tint that enhances color, shape, and symmetry." },
+  { Icon: Eye, title: "Eyeliner / Lash Enhancement", price: "Starting at [Price]", description: "Subtle definition along the lash line for brighter, fuller-looking eyes." },
+  { Icon: RefreshCcw, title: "Touch-Ups", price: "Starting at [Price]", description: "Keep your results looking fresh with periodic color boosts." },
+  { Icon: Wand2, title: "Corrections", price: "Consultation Required", description: "Color correction and reshaping of previous permanent makeup." },
 ]
 
 export const pricingHighlights = [
-  { Icon: Tag, title: "Tariffe Differenziate", description: "I costi variano in base al corso scelto e all'età dell'allievo. Contattaci per ricevere il preventivo personalizzato." },
-  { Icon: Users, title: "Sconti Famiglia", description: "Sono previste riduzioni speciali per fratelli e/o sorelle e per mamme e figlie che si iscrivono insieme." },
+  { Icon: CalendarCheck, title: "Deposit Required to Book", description: "A deposit secures your appointment and is applied toward your service total. (Placeholder \u2014 confirm with client.)" },
+  { Icon: Gift, title: "Touch-Up Included", description: "Your initial service may include a complimentary perfecting touch-up. (Placeholder \u2014 confirm with client.)" },
 ]

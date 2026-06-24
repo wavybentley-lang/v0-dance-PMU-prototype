@@ -84,7 +84,7 @@ export default function DanceStudioTemplate() {
       <HeroSection />
       <AboutSection isVisible={visibleSections.has("chi-siamo")} setSectionRef={setSectionRef} bioOpen={bioOpen} setBioOpen={setBioOpen} />
       <ClassesSection isVisible={visibleSections.has("corsi")} setSectionRef={setSectionRef} coursesExpanded={coursesExpanded} setCoursesExpanded={setCoursesExpanded} />
-      <CtaBanner eyebrow="Scopri il percorso pi&ugrave; adatto a te o a tuo figlio." text="La prima lezione &egrave; gratuita &mdash; vieni a trovarci" buttonLabel="Prenota Ora" />
+      <CtaBanner eyebrow="Book a consultation and we'll help you choose the best shape, color, and technique for your features." text="Not sure which service is right for you?" buttonLabel="Book a Consultation" />
       <ScheduleSection isVisible={visibleSections.has("orari")} setSectionRef={setSectionRef} />
       <PricingSection isVisible={visibleSections.has("prezzi")} setSectionRef={setSectionRef} />
       <GallerySection isVisible={visibleSections.has("gallery")} setSectionRef={setSectionRef} enlargedPhoto={enlargedPhoto} setEnlargedPhoto={setEnlargedPhoto} />
