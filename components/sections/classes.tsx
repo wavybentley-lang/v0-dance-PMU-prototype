@@ -53,9 +53,10 @@ export function ClassesSection({ isVisible, setSectionRef, coursesExpanded, setC
       className={`py-20 transition-[transform,opacity] duration-500 sm:py-28 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 px-4 text-left lg:px-0 lg:text-center">
-          <h2 className="mb-4 text-left font-serif text-4xl font-bold text-foreground sm:text-5xl lg:text-center">I Nostri Corsi</h2>
-          <p className="max-w-none text-lg text-pretty text-foreground lg:mx-auto lg:max-w-2xl">Dalla danza classica al movimento contemporaneo, offriamo un percorso completo per ogni età e livello</p>
+        <div className="mb-14 px-4 text-left lg:mb-20 lg:px-0 lg:text-center">
+          <p className="mb-3 text-xs font-semibold tracking-[0.28em] text-primary uppercase">I Nostri Corsi</p>
+          <h2 className="mb-4 text-left font-serif text-4xl font-bold text-foreground sm:text-5xl lg:text-center">Danza, Fitness e Benessere</h2>
+          <p className="max-w-none text-lg text-pretty text-muted-foreground lg:mx-auto lg:max-w-2xl">Dalla danza classica al movimento contemporaneo, offriamo un percorso completo per ogni età e livello</p>
         </div>
         {courseCategories.map((category, categoryIndex) => {
           const previousCoursesCount = courseCategories.slice(0, categoryIndex).reduce((count, item) => count + item.courses.length, 0)

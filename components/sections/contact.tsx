@@ -39,9 +39,10 @@ export function ContactSection({ isVisible, setSectionRef, formSubmitted, setFor
         <Image src="/contactformimage.jpg" alt="" fill quality={56} sizes="100vw" className="pointer-events-none object-cover object-center opacity-55" style={{ maskImage: "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.2) 100%)" }} aria-hidden="true" />
         <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85) 75%, #050505 100%)" }} />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 px-4 text-left lg:px-0 lg:text-center">
-            <h2 className="mb-4 text-left font-serif text-4xl font-bold text-foreground sm:text-5xl md:text-6xl lg:text-center">Vuoi provare un corso?</h2>
-            <p className="max-w-none text-lg text-pretty text-foreground lg:mx-auto lg:max-w-2xl">Scrivici e ti aiutiamo a scegliere il percorso più adatto a te al Centro Danza. Ti rispondiamo con orari, disponibilità e prossimi passi per iniziare.</p>
+          <div className="mb-14 px-4 text-left lg:mb-20 lg:px-0 lg:text-center">
+            <p className="mb-3 text-xs font-semibold tracking-[0.28em] text-primary uppercase">Contatti</p>
+            <h2 className="mb-4 text-left font-serif text-4xl font-bold text-foreground sm:text-5xl lg:text-center">Vuoi provare un corso?</h2>
+            <p className="max-w-none text-lg text-pretty text-muted-foreground lg:mx-auto lg:max-w-2xl">Scrivici e ti aiutiamo a scegliere il percorso più adatto a te. Ti rispondiamo con orari, disponibilità e prossimi passi per iniziare.</p>
           </div>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {formSubmitted ? (
